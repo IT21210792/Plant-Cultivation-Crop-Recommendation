@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: rgba(30, 30, 30, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            width: 400px;
+            display: grid;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #fff;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-in-out;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            color: #ccc;
+            text-align: left;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(50, 50, 50, 0.8);
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:focus {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #e63900, #ff5733);
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .min-div{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Plant Cultivation Recommendation</h2>
+        <form action="/process" method="POST">
+            <div class="min-div">
+                <label for="N">N:</label>
+            <input type="text" id="N" name="N" value="">
+
+            <label for="P">P:</label>
+            <input type="text" id="P" name="P" value="">
+
+            <label for="K">K:</label>
+            <input type="text" id="K" name="K" value="">
+            </div>
+
+            <label for="temperature">Temperature:</label>
+            <input type="text" id="temperature" name="temperature" value="">
+
+            <label for="humidity">Humidity:</label>
+            <input type="text" id="humidity" name="humidity" value="">
+
+            <label for="ph">pH:</label>
+            <input type="text" id="ph" name="ph" value="">
+
+            <label for="rainfall">Rainfall:</label>
+            <input type="text" id="rainfall" name="rainfall" value="">
+
+    
+
+
+            
+            <h2>Predicted Crop: {{ label }}</h2>
+            <h3>Cultivation Guide: {{ guide }}</h3>
+            
+            
+            
+    
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>
